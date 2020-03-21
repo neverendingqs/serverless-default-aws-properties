@@ -1,7 +1,7 @@
 {
-  "name": "serverless-default-aws-properties",
+  "name": "serverless-default-aws-resource-properties",
   "version": "0.0.1",
-  "description": "Print the resolved serverless.yml file",
+  "description": "Set default properties a given CloudFormation resource should have based on type",
   "main": "index.js",
   "scripts": {
     "deploy": "publish",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/neverendingqs/serverless-default-aws-properties.git"
+    "url": "git+https://github.com/neverendingqs/serverless-default-aws-resource-properties.git"
   },
   "keywords": [
     "serverless",
@@ -19,9 +19,9 @@
   "author": "neverendingqs",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/neverendingqs/serverless-default-aws-properties/issues"
+    "url": "https://github.com/neverendingqs/serverless-default-aws-resource-properties/issues"
   },
-  "homepage": "https://github.com/neverendingqs/serverless-default-aws-properties#readme",
+  "homepage": "https://github.com/neverendingqs/serverless-default-aws-resource-properties#readme",
   "devDependencies": {
     "publish-me-maybe": "^1.0.0"
   },
