@@ -1,6 +1,6 @@
 {
   "name": "serverless-default-aws-properties",
-  "version": "0.0.8",
+  "version": "0.0.1",
   "description": "Print the resolved serverless.yml file",
   "main": "index.js",
   "scripts": {
@@ -25,5 +25,7 @@
   "devDependencies": {
     "publish-me-maybe": "^1.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "lodash.merge": "^4.6.2"
+  }
 }

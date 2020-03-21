@@ -25,7 +25,7 @@ Example:
 
 ```yaml
 custom:
-  default-properties:
+  defaultAwsProperties:
     # Enable SSE and block public access for all S3 buckets
     - Type: AWS::S3::Bucket
       Properties:
