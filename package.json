@@ -1,0 +1,29 @@
+{
+  "name": "serverless-default-aws-properties",
+  "version": "0.0.8",
+  "description": "Print the resolved serverless.yml file",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "publish",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neverendingqs/serverless-default-aws-properties.git"
+  },
+  "keywords": [
+    "serverless",
+    "framework",
+    "aws"
+  ],
+  "author": "neverendingqs",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/neverendingqs/serverless-default-aws-properties/issues"
+  },
+  "homepage": "https://github.com/neverendingqs/serverless-default-aws-properties#readme",
+  "devDependencies": {
+    "publish-me-maybe": "^1.0.0"
+  },
+  "dependencies": {}
+}
