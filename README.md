@@ -44,6 +44,7 @@ custom:
       Exclude:
         - LoggingBucket
       Properties:
-        DestinationBucketName:
-          Ref: LoggingBucket
+        LoggingConfiguration:
+          DestinationBucketName:
+            Ref: LoggingBucket
 ```
