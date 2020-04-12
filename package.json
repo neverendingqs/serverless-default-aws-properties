@@ -4,8 +4,9 @@
   "description": "Set default properties a given CloudFormation resource should have based on type",
   "main": "index.js",
   "scripts": {
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "deploy": "publish",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "nyc mocha test/**.js"
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,14 @@
   },
   "homepage": "https://github.com/neverendingqs/serverless-default-aws-resource-properties#readme",
   "devDependencies": {
-    "publish-me-maybe": "^1.0.0"
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.1",
+    "publish-me-maybe": "^1.0.0",
+    "sinon": "^9.0.2"
   },
   "dependencies": {
+    "coveralls": "^3.0.11",
     "lodash.merge": "^4.6.2"
   }
 }
