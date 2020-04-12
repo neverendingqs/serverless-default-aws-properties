@@ -10,7 +10,8 @@ describe('DefaultAwsProperties', function() {
     this.sandbox = sinon.createSandbox();
 
     this.serverless = {
-      custom: {}
+      custom: {},
+      resources: {}
     };
     this.defaultAwsProperties = new DefaultAwsProperties({
       getProvider: this.sandbox.stub(),
@@ -98,6 +99,64 @@ describe('DefaultAwsProperties', function() {
             inOriginalAsWell: 'original'
           }
         });
+    });
+  });
+
+  describe('addDefaults()', function() {
+    it('excludes resources based on type or logical ID', function() {
+      const defaultProperties = {
+        BucketEncryption: {
+          ServerSideEncryptionConfiguration: [
+            {
+              ServerSideEncryptionByDefault: {
+                SSEAlgorithm: 'AES256'
+              }
+            }
+          ]
+        },
+        PublicAccessBlockConfiguration: {
+          BlockPublicAcls: true,
+          BlockPublicPolicy: true,
+          IgnorePublicAcls: true,
+          RestrictPublicBuckets: true
+        }
+      };
+
+      this.serverless.custom.defaultAwsProperties = [
+        {
+          Type: 'AWS::S3::Bucket',
+          Exclude: [
+            'IgnoredBucket'
+          ],
+          Properties: defaultProperties
+        }
+      ];
+
+      this.serverless.resources.Resources = {
+        IgnoredBucket: {
+          Type: 'AWS::S3::Bucket',
+          Properties: {}
+        },
+        NotABucket: {
+          Type: 'AWS::DynamoDB::Table',
+          Properties: {}
+        },
+        RegularBucket: {
+          Type: 'AWS::S3::Bucket',
+          Properties: {}
+        }
+      };
+
+      this.defaultAwsProperties.addDefaults();
+
+      this.serverless.resources.Resources.IgnoredBucket.Properties
+        .should.not.have.property('BucketEncryption');
+
+      this.serverless.resources.Resources.NotABucket.Properties
+        .should.not.have.property('BucketEncryption');
+
+      this.serverless.resources.Resources.RegularBucket.Properties
+      .should.deep.include(defaultProperties);
     });
   });
 });
