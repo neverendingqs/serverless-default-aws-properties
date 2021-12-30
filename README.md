@@ -4,6 +4,9 @@
 
 # serverless-default-aws-resource-properties
 
+**DEPRECATION NOTICE**: please use [serverless-default-aws-resource-attributes](https://github.com/neverendingqs/serverless-default-aws-resource-attributes) instead, as it supports a superset of the functionality provided by this plugin.
+This plugin will no longer be maintained.
+
 This plugin allows you to set default properties a given CloudFormation resource
 should have based on type.
 
