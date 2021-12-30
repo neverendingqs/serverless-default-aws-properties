@@ -1,6 +1,6 @@
 {
   "name": "serverless-default-aws-resource-properties",
-  "version": "0.0.30",
+  "version": "0.1.0",
   "description": "Set default properties a given CloudFormation resource should have based on type",
   "main": "index.js",
   "scripts": {
